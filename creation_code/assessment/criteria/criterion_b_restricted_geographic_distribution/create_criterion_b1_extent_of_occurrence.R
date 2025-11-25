@@ -43,17 +43,6 @@
 
  ## -- load core objects -- ## ----
 
- ## -- call to monitoring site positions -- ##
-  # # point to data locale
-  #   data_locale <- "data_intermediate/spatial/monitoring_sites/"
-  #
-  # # point to data file
-  #   data_file <- "regional_monitoring_sites.rda"
-  #
-  # # import site positions
-  #   load(paste0(data_locale, data_file))
-
-
  ## -- import coral reefs -- ##
   # point to data locale
     data_locale <- "data_intermediate/geophysical/coral_reefs/"
@@ -98,10 +87,9 @@
 ##
   # get list of ecoregions
     ecoregion_list <-
-      # regional_monitoring_sites %>% pull(Ecoregion) %>% unique()
       regional_coral_reefs %>% pull(Ecoregion) %>% unique()
 # [1] "Gulf of Aden"                 "Northern and Central Red Sea"
-# [3] "Southern Red Sea"  
+# [3] "Southern Red Sea"
 
  ## -- loop for analysis -- ## ----
   # create empty object to hold results
@@ -144,10 +132,10 @@
              Status = ifelse(`EOO Area` > 50e3,               "NT/LC", Status))
 # # A tibble: 3 × 3
   # Ecoregion                    `EOO Area` Status
-  # <chr>                             <dbl> <chr> 
-# 1 Gulf of Aden                    227742. NT/LC 
-# 2 Northern and Central Red Sea    330843. NT/LC 
-# 3 Southern Red Sea                259441. NT/LC 
+  # <chr>                             <dbl> <chr>
+# 1 Gulf of Aden                    227742. NT/LC
+# 2 Northern and Central Red Sea    330843. NT/LC
+# 3 Southern Red Sea                259441. NT/LC
 
 
 ##

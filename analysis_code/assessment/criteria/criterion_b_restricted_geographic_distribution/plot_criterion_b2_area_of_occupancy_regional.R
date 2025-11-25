@@ -46,14 +46,6 @@
   # import coastline
     load(paste0(data_locale, data_file))
 
-  # # point to data locale
-  #   data_locale <- "data_intermediate/spatial/monitoring_sites/"
-  #
-  # # point to data file
-  #   data_file <- "regional_monitoring_sites.rda"
-  #
-  # # import site positions
-  #   load(paste0(data_locale, data_file))
 
  ## -- point to ecoregion combined coral reefs -- ##
   # point to data locale
@@ -93,10 +85,9 @@
  ## -- calculate criterion b2 area of occupancy -- ## ----
   # get list of ecosystem units
     ecoregion_list <-
-      # regional_monitoring_sites %>% pull(Ecoregion) %>% unique()
       regional_coral_reefs %>% pull(Ecoregion) %>% unique()
 # [1] "Gulf of Aden"                 "Northern and Central Red Sea"
-# [3] "Southern Red Sea" 
+# [3] "Southern Red Sea"
 
  ## -- set parameters for area analyses -- ##
   # set grid size [ 10 km ]
@@ -278,14 +269,12 @@
         # st_transform(32637) %>%
         st_bbox()
 
- ## -- combine aoo polygons -- ## ----
+ ## -- combine aoo objects -- ## ----
   # create empty object to hold results
     criterion_b2_polygons <- st_sfc(crs = 32637) %>% st_sf()
 
   # loop                 # i=1 ## -- for testing -- ##
     for(i in 1:length(ecoregion_list)){
-    # for(i in c(1:10,
-    #            12:length(aoo_grid))){
 
       # subset object and convert to sf
         dat <-

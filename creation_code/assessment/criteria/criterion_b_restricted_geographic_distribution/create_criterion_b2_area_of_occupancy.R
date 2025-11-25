@@ -44,17 +44,6 @@
   # call to additional functionality
     # library(redlistr)
 
- ## -- load data objects -- ## ----
-  # # point to data locale
-    # data_locale <- "data_intermediate/spatial/monitoring_sites/"
-
-  # # point to data file
-    # data_file <- "regional_monitoring_sites.rda"
-
-  # # import site positions
-    # load(paste0(data_locale, data_file))
-
-
  ## -- point to regional coral reefs coral reefs -- ##
   # point to data locale
     data_locale <- "data_intermediate/geophysical/coral_reefs/"
@@ -99,10 +88,9 @@
  ## -- set parameters for analysis -- ## ----
   # get list of ecoregions
     ecoregion_list <-
-      # regional_monitoring_sites %>% pull(Ecoregion) %>% unique()
       regional_coral_reefs %>% pull(Ecoregion) %>% unique()
 # [1] "Gulf of Aden"                 "Northern and Central Red Sea"
-# [3] "Southern Red Sea"   
+# [3] "Southern Red Sea"
 
   # set grid size [ 10 km ]
     grid_size <- 10e3
@@ -182,10 +170,10 @@
              Status = ifelse(AOO > 50,                "NT/LC", Status))
 # # A tibble: 3 × 4
   # Ecoregion                    `Grid Uncertainty`   AOO Status
-  # <chr>                                     <int> <int> <chr> 
-# 1 Gulf of Aden                                 70    58 NT/LC 
-# 2 Northern and Central Red Sea                543   458 NT/LC 
-# 3 Southern Red Sea                            483   403 NT/LC 
+  # <chr>                                     <int> <int> <chr>
+# 1 Gulf of Aden                                 70    58 NT/LC
+# 2 Northern and Central Red Sea                543   458 NT/LC
+# 3 Southern Red Sea                            483   403 NT/LC
 
   # join descriptions
     criterion_b2_area_of_occupancy %<>%

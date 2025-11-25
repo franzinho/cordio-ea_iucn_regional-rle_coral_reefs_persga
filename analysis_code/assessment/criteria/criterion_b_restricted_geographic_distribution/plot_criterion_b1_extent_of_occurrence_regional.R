@@ -42,15 +42,6 @@
     load(paste0(data_locale, data_file))
 
 
-  # # point to data locale
-  #   data_locale <- "data_intermediate/spatial/monitoring_sites/"
-  #
-  # # point to data file
-  #   data_file <- "regional_monitoring_sites.rda"
-  #
-  # # import site positions
-  #   load(paste0(data_locale, data_file))
-
  ## -- point to regioinal coral reefs -- ##
   # point to data locale
     data_locale <- "data_intermediate/geophysical/coral_reefs/"
@@ -93,10 +84,9 @@
  ## -- calculate criterion b1 exent of occurrence -- ##
   # get list of ecosystem units
     ecoregion_list <-
-      # regional_monitoring_sites %>% pull(Ecoregion) %>% unique()
       regional_coral_reefs %>% pull(Ecoregion) %>% unique()
 # [1] "Gulf of Aden"                 "Northern and Central Red Sea"
-# [3] "Southern Red Sea" 
+# [3] "Southern Red Sea"
 
  ## -- create empty object to hold results -- ## ----
   # extent of occurrence
@@ -219,10 +209,10 @@
              Status = ifelse(`EOO Area` > 50e3,               "NT/LC", Status))
 # # A tibble: 3 × 7
   # Ecoregion        reefs_x reefs_y `EOO Area` easting northing Status
-  # <chr>              <dbl>   <dbl>      <dbl>   <dbl>    <dbl> <chr> 
-# 1 Gulf of Aden      1.35e6  1.42e6    231649. -1.28e7   1.75e7 NT/LC 
-# 2 Northern and Ce…  2.29e5  2.73e6    331157. -9.16e6   2.20e7 NT/LC 
-# 3 Southern Red Sea  6.67e5  1.88e6    259517. -1.15e7   2.15e7 NT/LC 
+  # <chr>              <dbl>   <dbl>      <dbl>   <dbl>    <dbl> <chr>
+# 1 Gulf of Aden      1.35e6  1.42e6    231649. -1.28e7   1.75e7 NT/LC
+# 2 Northern and Ce…  2.29e5  2.73e6    331157. -9.16e6   2.20e7 NT/LC
+# 3 Southern Red Sea  6.67e5  1.88e6    259517. -1.15e7   2.15e7 NT/LC
 
 ##
 ## 3. Visualise

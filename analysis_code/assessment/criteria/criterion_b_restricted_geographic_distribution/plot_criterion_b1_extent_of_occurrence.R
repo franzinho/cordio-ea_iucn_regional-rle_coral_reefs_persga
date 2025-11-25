@@ -45,14 +45,6 @@
   # import coastline
     load(paste0(data_locale, data_file))
 
-  # # point to data locale
-  #   data_locale <- "data_intermediate/spatial/monitoring_sites/"
-  #
-  # # point to data file
-  #   data_file <- "regional_monitoring_sites.rda"
-  #
-  # # import site positions
-  #   load(paste0(data_locale, data_file))
 
  ## -- point to ecoregions + custom  coral reefs -- ##
   # point to data locale
@@ -93,10 +85,9 @@
  ## -- calculate criterion b1 exent of occurrence -- ##
   # get list of ecosystem units
     ecoregion_list <-
-      # regional_monitoring_sites %>% pull(Ecoregion) %>% unique()
       regional_coral_reefs %>% pull(Ecoregion) %>% unique()
 # [1] "Gulf of Aden"                 "Northern and Central Red Sea"
-# [3] "Southern Red Sea" 
+# [3] "Southern Red Sea"
 
  ## -- create empty objects to hold results -- ## ----
   # extent of occurrence
